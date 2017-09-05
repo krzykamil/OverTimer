@@ -3,7 +3,7 @@
 ## Models:
   -Post -> date:DateTime, rationale:string
   X User -> using Devise gem
-  -Admin -> using STI
+  X Admin -> using STI
 
 ## Features:
   -Workflow approval
