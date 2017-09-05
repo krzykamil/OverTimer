@@ -2,7 +2,7 @@
 
 ## Models:
   -Post -> date:DateTime, rationale:string
-  -User -> using Devise gem
+  X User -> using Devise gem
   -Admin -> using STI
 
 ## Features:
