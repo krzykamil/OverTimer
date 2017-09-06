@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :helper do
-  describe "Creation" do
+  describe 'Creation' do
     before do
       @post = Post.create(date: Date.today, rationale: "Test value")
     end

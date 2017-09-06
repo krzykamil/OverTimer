@@ -1,0 +1,8 @@
+<%= form_for @post do |f| %>
+  <!-- HTML5 dosen't work correctly with date_field on all browser, hence date_select is use TODO find a more user friendly way for this. Also this makes for bigger test in spec -->
+  <%= f.date_select :date,{ date_format: 'YYYY/MM/DD' } %>
+  <%= f.text_area :rationale %>
+  
+  <%= f.submit 'Save' %>
+
+<% end %>
