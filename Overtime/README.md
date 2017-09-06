@@ -15,3 +15,6 @@
 ## UI
 Bootstrap -> formatting
 
+## Refactor TODOS:
+  -Refactor post x user associacion test
+  -Refactor post date display in views, and tests for them
