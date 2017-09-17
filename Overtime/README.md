@@ -1,7 +1,7 @@
 # Overtime App
 
 ## Models:
-  -Post -> date:DateTime, rationale:string
+  X Post -> date:DateTime, rationale:string
   X User -> using Devise gem
   X Admin -> using STI
 

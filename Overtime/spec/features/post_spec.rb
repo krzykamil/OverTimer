@@ -8,6 +8,8 @@ describe 'navigate' do
     end
 
     it 'has a title of Posts' do
+      user = User.create!(email: "JoeDoe@gmail.com", password: "Ilovemywife", password_confirmation: "Ilovemywife", first_name: "Joe", last_name: "Doe")
+      login_as(user, scope: :user)
       visit posts_path
       expect(page).to have_content(/Posts/)
     end
@@ -15,7 +17,7 @@ describe 'navigate' do
 
   describe 'creation' do
     before do
-      user = User.create(email: "JoeDoe@gmail.com", password: "Ilovemywife", password_confirmation: "Ilovemywife", first_name: "Joe", last_name: "Doe")
+      user = User.create!(email: "JoeDoe@gmail.com", password: "Ilovemywife", password_confirmation: "Ilovemywife", first_name: "Joe", last_name: "Doe")
       login_as(user, scope: :user)
       visit new_post_path
     end
@@ -26,7 +28,7 @@ describe 'navigate' do
     end
 
     it 'can be created from new form page' do
-      #
+      #TODO find a better way to deal with datepicker test
       select Date.today.year, from: 'post_date_1i'
       select Date::MONTHNAMES[Date.today.month], from: 'post_date_2i'
       select Date.today.day, from: 'post_date_3i'
