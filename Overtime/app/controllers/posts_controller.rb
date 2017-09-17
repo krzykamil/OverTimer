@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show]
   def index
+    @posts = Post.all #The only thing this does, is taking out all posts from the DB and makes them availible in the index action, so that you can use them in the view
   end
 
   def new
