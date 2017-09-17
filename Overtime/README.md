@@ -13,9 +13,9 @@
   -Needs to document if employee did not register overtime
 
 ## UI
-Bootstrap -> formatting
+  X Bootstrap -> formatting
 
 ## Refactor TODOS:
-  -Add full_name to user
+  X Add full_name to user
   -Refactor post x user associacion test
   -Refactor post date display in views, and tests for them
