@@ -1,8 +1,54 @@
-<%= form_for @post do |f| %>
+<%= form_for @post, class: "form-horizontal" do |f| %>
   <!-- HTML5 dosen't work correctly with date_field on all browser, hence date_select is use TODO find a more user friendly way for this. Also this makes for bigger test in spec -->
-  <%= f.date_select :date,{ date_format: 'YYYY/MM/DD' } %>
-  <%= f.text_area :rationale %>
-  
-  <%= f.submit 'Save' %>
+  <div class="form-group row">
+    <div class="col-xs-2">
+      <%= f.label :date, class:"col-sm-2 control-label"  %>
+      <%= f.date_select :date,{ date_format: 'YYYY/MM/DD' }, class:"form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-2">
+      <%= f.label :rationale, class:"col-sm-2 control-label"  %>
+      <%= f.text_area :rationale, class:"form-control" %>
+    </div>
+  </div>
+
+  <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
 
 <% end %>
+
+<hr>
+        <div class="form-group">
+           
+          <label for="inputEmail3" class="col-sm-2 control-label">
+            Email
+          </label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputEmail3" type="email" />
+          </div>
+        </div>
+        <div class="form-group">
+           
+          <label for="inputPassword3" class="col-sm-2 control-label">
+            Password
+          </label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputPassword3" type="password" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+               
+              <label>
+                <input type="checkbox" /> Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+             
+            <button type="submit" class="btn btn-default">
+  
