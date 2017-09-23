@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all #The only thing this does, is taking out all posts from the DB and makes them availible in the index action, so that you can use them in the view
   end
@@ -24,13 +24,18 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Successful post'
+      redirect_to @post, notice: 'Successful post edition'
     else
       render edit
     end
   end
 
   def show
+  end
+
+  def destroy
+    @post.delete
+    redirect_to posts_path, notice: 'Successful deletion'
   end
 
   private
