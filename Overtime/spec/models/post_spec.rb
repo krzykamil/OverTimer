@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :helper do
   describe 'Creation' do
     before do
-      @post = Post.create(date: Date.today, rationale: "Test value")
+      @post = FactoryGirl.create(:post)
     end
     
     it 'can be created' do
