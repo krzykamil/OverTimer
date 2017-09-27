@@ -14,6 +14,8 @@
 
 ## UI
   X Bootstrap -> formatting
+  X Update styles for forms
+  - Font Awesome Icons
 
 ## Refactor TODOS:
   X Add full_name to user
