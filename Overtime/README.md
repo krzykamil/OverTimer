@@ -6,9 +6,9 @@
   X Admin -> using STI
 
 ## Features:
-  -Workflow approval
+  -Approval Workflow
   -sending sms (with link to approval or overtime input)
-  -Dashboard for admin
+  X Dashboard for admin
   -Emails summary for admin to approve
   -Needs to document if employee did not register overtime
 
@@ -21,3 +21,4 @@
   X Add full_name to user
   -Refactor post x user associacion test
   -Refactor post date display in views, and tests for them
+  -Add some integration tests for devise http://devise.plataformatec.com.br/#integration-tests
