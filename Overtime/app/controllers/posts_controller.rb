@@ -42,8 +42,8 @@ class PostsController < ApplicationController
 
   def post_params
     #require brings in the model of post
-    #permit whielists date and rationale, making them the only availible params (security reasons)
-    params.require(:post).permit(:date, :rationale)
+    #permit whielists date rationale, status making them the only availible params (security reasons)
+    params.require(:post).permit(:date, :rationale, :status)
   end
 
   def set_post
