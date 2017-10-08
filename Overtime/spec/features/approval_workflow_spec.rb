@@ -19,10 +19,6 @@ describe 'navigate' do
       expect(@post.reload.status).to eq('approved')
     end
 
-    it 'can be edited by an admin' do
-      
-    end
-
     it 'cannot be edited by non admin' do
       logout(:user)
       user = FactoryGirl.create(:user)

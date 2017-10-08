@@ -40,7 +40,7 @@ describe 'navigate' do
 
   describe 'delete' do
     it 'can be deleted' do
-      @post = FactoryGirl.create(:post)
+      @post = FactoryGirl.create(:post, user_id: @user.id )
       visit posts_path
 
       click_link("delete_post_#{@post.id}_from_index")
@@ -84,22 +84,29 @@ describe 'navigate' do
 
   describe 'edit' do
     before do
-      @post = FactoryGirl.create(:post)
-    end
-    it 'can be reached by clicking edit on index page' do
-      visit posts_path
+      @user = FactoryGirl.create(:user)
+      login_as(@user, scope: :user)
+      @post = FactoryGirl.create(:post, user_id: @user.id)
 
-      click_link("edit_#{@post.id}")
-      expect(page.status_code).to eq 200
     end
 
     it "can be edited" do
       visit edit_post_path(@post)
+
       select Date.tomorrow.year, from: 'post_date_1i'
       select Date::MONTHNAMES[Date.tomorrow.month], from: 'post_date_2i'
       select Date.tomorrow.day, from: 'post_date_3i'
       fill_in 'post[rationale]', with: "Edited content"
+    end
 
+    it 'cannot be edited by a non authorized user' do
+      logout(:user)
+      non_authorized_user = FactoryGirl.create(:non_authorized_user)
+      login_as(non_authorized_user, scope: :user)
+
+      visit edit_post_path(@post)
+
+      expect(current_path).to eq root_path
     end
   end
 end
