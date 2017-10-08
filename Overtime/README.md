@@ -23,3 +23,4 @@
   -Refactor post date display in views, and tests for them
   -Add some integration tests for devise http://devise.plataformatec.com.br/#integration-tests
   -Refactor DRY code of searches in admin dashboard
+  -Refactor post_form for admin user with status
