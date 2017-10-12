@@ -5,12 +5,14 @@ describe 'navigate' do
   before do
     @user = FactoryGirl.create(:user)
     login_as(@user, scope: :user)
+    @other_user = FactoryGirl.create(:other_user)
+    @non_authorized_user = FactoryGirl.create(:non_authorized_user)
   end
 
-  describe 'index' do #TODO differantee view for admin and user
+  describe 'index' do
 
     before do
-      visit posts_path 
+      visit posts_path
     end
 
     it 'can be reached successfully' do
@@ -22,10 +24,19 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      post1 = FactoryGirl.build_stubbed(:post)
-      post2 = FactoryGirl.build_stubbed(:second_post)
+      post1 = FactoryGirl.build_stubbed(:post, user_id: @user.id)
+      post2 = FactoryGirl.build_stubbed(:second_post, user_id: @user.id)
       visit posts_path
       expect(page).to have_content(/Rationale|stuff/)
+    end
+
+    it 'should not see other users posts ' do
+      post1 = FactoryGirl.build_stubbed(:post, user_id: @user.id)
+      post2 = FactoryGirl.build_stubbed(:second_post, user_id: @user.id)
+      another_user_post = FactoryGirl.build_stubbed(:another_user_post, user_id: @other_user.id)
+      visit posts_path
+      expect(page).to have_content(/Rationale|stuff/)
+      expect(page).to_not have_content(another_user_post.rationale)
     end
   end
 
@@ -53,8 +64,7 @@ describe 'navigate' do
       visit new_post_path
     end
 
-    it 'has a new form taht can be reached' do
-
+    it 'has a new form that can be reached' do
       expect(page.status_code).to eq 200
     end
 
@@ -78,7 +88,7 @@ describe 'navigate' do
 
       click_on "Save"
 
-      expect(User.last.posts.last.rationale).to eq("User Association")
+      expect(@user.posts.last.rationale).to eq("User Association")
     end
   end
 

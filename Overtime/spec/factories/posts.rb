@@ -8,4 +8,9 @@ FactoryGirl.define do
     date Date.yesterday
     rationale "Some other stuff"
   end
+
+  factory :another_user_post, class: "Post" do
+    date Date.yesterday
+    rationale "Some very other stuff"
+  end
 end
