@@ -16,5 +16,4 @@ module PostsHelper
       content_tag(:span, status.titleize, class: 'label label-danger')
     end
   end
-
 end
