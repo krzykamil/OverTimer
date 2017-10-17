@@ -15,6 +15,7 @@ gem "gritter", "1.2.0"
 gem "administrate"
 gem "bourbon"
 gem 'pundit', '~> 1.1'
+gem 'puma', '~> 3.4'
 
 group :development, :test do
   gem 'byebug'
@@ -28,4 +29,3 @@ group :development do
   gem 'web-console', '~> 2.0'
   # gem 'spring'
 end
-
