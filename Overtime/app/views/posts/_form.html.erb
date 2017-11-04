@@ -5,6 +5,14 @@
   <%= js add_gritter(error, title: "Overtime App Notification", sticky: false) %>
   <% end %>
 <% end %>
+
+  <div class="form-group row">
+    <div class="col-sm-2">
+      <%= f.label :overtime_request, class:"col-sm-2 control-label"  %>
+      <%= f.number_field :overtime_request, class:"form-control" %>
+    </div>
+  </div>
+
   <!-- HTML5 dosen't work correctly with date_field on all browser, hence date_select is used TODO find a more user friendly way for this. Also this makes for bigger test in spec -->
   <div class="form-group row">
     <div class="col-xs-2">
