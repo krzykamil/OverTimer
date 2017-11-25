@@ -22,7 +22,8 @@
 ## Refactor TODOS:
   X Add full_name to user
   X Refactor post x user associacion test
-  - Refactor post date display in views, and tests for them
-  - Add some integration tests for devise http://devise.plataformatec.com.br/#integration-tests
   X Refactor DRY code of searches in admin dashboard
   X Refactor post_form for admin user with status
+  - Refactor post date display in views, and tests for them
+  - Add some integration tests for devise http://devise.plataformatec.com.br/#integration-tests
+  - Integrate validation for phone attr in user

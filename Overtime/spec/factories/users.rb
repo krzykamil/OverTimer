@@ -10,7 +10,7 @@ FactoryGirl.define do
     email { generate :email }
     password 'Ilovemywife'
     password_confirmation 'Ilovemywife'
-    phone "555888777"
+    phone "5558887771"
   end
 
   factory :other_user, class: "User" do
@@ -19,7 +19,7 @@ FactoryGirl.define do
     email { generate :email }
     password 'Ihatemywife'
     password_confirmation 'Ihatemywife'
-    phone "555888777"
+    phone "5558887771"
   end
 
   factory :admin_user, class: "AdminUser" do
@@ -28,7 +28,7 @@ FactoryGirl.define do
     email { generate :email }
     password 'Ilovemywife'
     password_confirmation 'Ilovemywife'
-    phone "555888777"
+    phone "5558887771"
   end
 
   factory :non_authorized_user, class: "User" do
@@ -37,6 +37,6 @@ FactoryGirl.define do
     email { generate :email }
     password 'nonauth'
     password_confirmation 'nonauth'
-    phone "555888777"
+    phone "5558887771"
   end
 end
