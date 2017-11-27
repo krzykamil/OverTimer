@@ -1,3 +1,5 @@
 class AuditLog < ActiveRecord::Base
   belongs_to :user
+  
+
 end
