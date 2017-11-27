@@ -26,4 +26,4 @@
   X Refactor post_form for admin user with status
   - Refactor post date display in views, and tests for them
   - Add some integration tests for devise http://devise.plataformatec.com.br/#integration-tests
-  - Integrate validation for phone attr in user
+  X Integrate validation for phone attr in user
