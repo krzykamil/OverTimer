@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :audit_logs
   has_many :posts
   PHONE_REGEX = /\A[0-9]*\Z/
   # Include default devise modules. Others available are:
