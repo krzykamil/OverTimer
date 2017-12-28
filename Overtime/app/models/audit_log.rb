@@ -1,5 +1,8 @@
 class AuditLog < ActiveRecord::Base
+  enum status: { pending: 0, confirmed: 1 }
+
   belongs_to :user
+
   validates_presence_of :user_id, :status, :start_date
 
   after_initialize :set_defaults
