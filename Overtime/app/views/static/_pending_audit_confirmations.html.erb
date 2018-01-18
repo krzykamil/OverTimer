@@ -1,0 +1,3 @@
+<% pending_audit_confirmations.each do |pending_audit_confirmations| %>
+  <%= link_to "Confirming no overtime in week of #{pending_audit_confirmations.start_date}",root_path ,class: 'btn btn-primary btn-block btn-lg', data: { confirm: "You sure buddy?" } %>
+<% end %>
