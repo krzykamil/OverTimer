@@ -28,4 +28,5 @@
   - Add some integration tests for devise http://devise.plataformatec.com.br/#integration-tests
   - Radio buttons on edit post
   - Use locals in controllers
+  - Install pry
   X Integrate validation for phone attr in user

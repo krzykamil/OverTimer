@@ -1,0 +1,28 @@
+<% recent_audit_items.each do |recent_audit_items| %>
+  <div class="homepage-block col-md-3">
+    <h3>
+      <%= recent_audit_items.user.full_name%>
+    </h3>
+
+    <p>
+      <span class="pending-details">Week starting:</span> <%= recent_audit_items.start_date %>
+    </p>
+
+    <p>
+      <span class="pending-details">Confirmed at:</span> <%= recent_audit_items.end_date || status_label('pending') %>
+    </p>
+
+    <p>
+      <span class="pending-details">Status:</span> <%= status_label recent_audit_items.status %>
+    </p>
+
+    <div class="row">
+      <div class="col-md-6 column">
+        <%=link_to 'Approve', approve_post_path(recent_audit_items.id), class: 'btn btn-success btn-block', id:"approve_#{recent_audit_items.id}"%>
+      </div>
+      <div class="col-md-6 column">
+        <%=link_to 'Review', edit_post_path(recent_audit_items), class: 'btn btn-warning btn-block'%>
+      </div>
+    </div>
+  </div>
+<% end %>

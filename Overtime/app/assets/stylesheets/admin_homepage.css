@@ -17,6 +17,10 @@
   margin: 5px 5px 5px 5px;
   padding: 2px;
 }
+
+.homepage-block:hover {
+  background-color: #172b63
+}
 .pending-details {
   font-weight: 900;
 }
