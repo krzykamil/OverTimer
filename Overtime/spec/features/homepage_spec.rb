@@ -16,12 +16,12 @@ describe 'Homepage' do
 
   context 'Employee homepage' do
     before { login_as(user, scope: :user) }
-    let(:audit_log) { create :audit_log, user_id: user.id }
+    let!(:audit_log) { create :audit_log, user_id: user.id }
     it 'allows employee to change audit logs status' do
       login_as(user, scope: :user)
       visit root_path
       click_on("confirm_#{audit_log.id}")
-      expect().to eq ''
+      expect(audit_log.reload.status).to eq 'confirmed'
     end
   end
 end
