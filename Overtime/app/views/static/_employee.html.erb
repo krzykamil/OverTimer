@@ -1,9 +1,14 @@
 <div clas='container-fluid'>
   <div class='row'>
-    <div class='pending-homepage jumbotron employee-blocks'>
-      <h3>Pending Confirmation</h3>
-      <%= render partial: 'pending_audit_confirmations', locals: { pending_audit_confirmations: @pending_audit_confirmations } %>
+    <% if @pending_audit_confirmations.count > 0 %>
+      <div class='pending-homepage jumbotron employee-blocks'>
+        <h3>Pending Confirmation</h3>
+        <%= render partial: 'pending_audit_confirmations', locals: { pending_audit_confirmations: @pending_audit_confirmations } %>
+      </div>
+    <% end %>
+    <div class='column pending-homepage employee-blocks'>
+      <h3>Request Overtime</h3>
+      <%= link_to "Request Overtime Approval", new_post_path, class: "btn btn-primary btn-block btn-lg" %>
     </div>
-    <div class='col-md-5 column pending-homepage jumbotron employee-blocks'></div>
   </div>
 </div>
