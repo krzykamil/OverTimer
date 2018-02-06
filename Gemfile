@@ -20,6 +20,10 @@ gem 'twilio', '~> 3.1', '>= 3.1.1'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'kaminari', '1.1.0'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.o'
