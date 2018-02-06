@@ -9,7 +9,7 @@ namespace :notification do
     # end
   end
 
-  desc "Sends email notification to manager(admin) each day" to inform about pending overtime request
+  desc "Sends email notification to manager(admin) each day to inform about pending overtime request"
   task manager_email: :environment do
     submitted_posts = Posts.submitted
     admin_users = AdminUser.all
