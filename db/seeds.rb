@@ -1,5 +1,5 @@
 @employee = Employee.create!(
-  email: "Misteremployee@gmail.com",
+  email: "MisterUser@gmail.com",
   password: "Ilovemywife",
   password_confirmation: "Ilovemywife",
   first_name: "Joe",
