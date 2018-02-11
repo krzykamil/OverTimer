@@ -5,6 +5,8 @@ class AdminUserDashboard < Administrate::BaseDashboard
     posts: Field::HasMany.with_options(searchable: false),
     id: Field::Number.with_options(searchable: false),
     email: Field::String.with_options(searchable: true),
+    ssn: Field::Number.with_options(searchable: false),
+    company: Field::String.with_options(searchable: true),
     phone: Field::String.with_options(searchable: false),
     password: Field::String.with_options(searchable: false),
     sign_in_count: Field::Number.with_options(searchable: false),
@@ -21,14 +23,15 @@ class AdminUserDashboard < Administrate::BaseDashboard
 
   COLLECTION_ATTRIBUTES = [
     :posts,
-    :id,
     :email,
+    :ssn
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = [
     :posts,
-    :id,
+    :ssn,
     :email,
+    :company,
     :password,
     :sign_in_count,
     :current_sign_in_at,
@@ -43,9 +46,11 @@ class AdminUserDashboard < Administrate::BaseDashboard
   ].freeze
 
   FORM_ATTRIBUTES = [
+    :ssn,
     :email,
     :phone,
     :password,
+    :company,
     :first_name,
     :last_name,
     :type,
