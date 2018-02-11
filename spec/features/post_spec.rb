@@ -77,7 +77,7 @@ describe 'navigate' do
       select Date::MONTHNAMES[Date.today.month], from: 'post_date_2i'
       select Date.today.day, from: 'post_date_3i'
       fill_in 'post[rationale]', with: "Some content"
-      fill_in 'post[overtime_request]', with: 4.5
+      fill_in 'post[daily_hours]', with: 4.5
 
       expect { click_on "Save" }.to change(Post, :count).by(1)
     end
@@ -87,7 +87,7 @@ describe 'navigate' do
       select Date::MONTHNAMES[Date.today.month], from: 'post_date_2i'
       select Date.today.day, from: 'post_date_3i'
       fill_in 'post[rationale]', with: "User Association"
-      fill_in 'post[overtime_request]', with: 4.5
+      fill_in 'post[daily_hours]', with: 4.5
 
       click_on "Save"
 
