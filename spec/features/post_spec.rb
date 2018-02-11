@@ -41,6 +41,10 @@ describe 'navigate' do
   end
 
   describe 'new' do
+    let!(:user) { Employee.create(email: 'heheh@mo.pl') }
+    before do
+      login_as(user, scope: :user)
+    end
     it 'has a link from homepage'do
       visit new_post_path
 

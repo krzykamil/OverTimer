@@ -1,0 +1,4 @@
+<% if current_user.try(:type) == 'AdminUser' %>
+  <li> <%= link_to "ADMIN DASHBOARD", admin_root_path %> </li>
+  <li class="divider">
+<% end %>
