@@ -30,13 +30,13 @@ describe 'navigate' do
 
     it 'has a list of posts' do
       visit posts_path
-      expect(page).to have_content(/Rationale|stuff/)
+      expect(page).to have_content(/work_performed|stuff/)
     end
 
     it 'should not see other users posts ' do
       visit posts_path
-      expect(page).to have_content(/Rationale|stuff/)
-      expect(page).to_not have_content(another_user_post.rationale)
+      expect(page).to have_content(/work_performed|stuff/)
+      expect(page).to_not have_content(another_user_post.work_performed)
     end
   end
 
@@ -76,7 +76,7 @@ describe 'navigate' do
       select Date.today.year, from: 'post_date_1i'
       select Date::MONTHNAMES[Date.today.month], from: 'post_date_2i'
       select Date.today.day, from: 'post_date_3i'
-      fill_in 'post[rationale]', with: "Some content"
+      fill_in 'post[work_performed]', with: "Some content"
       fill_in 'post[daily_hours]', with: 4.5
 
       expect { click_on "Save" }.to change(Post, :count).by(1)
@@ -86,12 +86,12 @@ describe 'navigate' do
       select Date.today.year, from: 'post_date_1i'
       select Date::MONTHNAMES[Date.today.month], from: 'post_date_2i'
       select Date.today.day, from: 'post_date_3i'
-      fill_in 'post[rationale]', with: "User Association"
+      fill_in 'post[work_performed]', with: "User Association"
       fill_in 'post[daily_hours]', with: 4.5
 
       click_on "Save"
 
-      expect(user.posts.last.rationale).to eq("User Association")
+      expect(user.posts.last.work_performed).to eq("User Association")
     end
   end
 
@@ -106,7 +106,7 @@ describe 'navigate' do
       select Date.tomorrow.year, from: 'post_date_1i'
       select Date::MONTHNAMES[Date.tomorrow.month], from: 'post_date_2i'
       select Date.tomorrow.day, from: 'post_date_3i'
-      fill_in 'post[rationale]', with: "Edited content"
+      fill_in 'post[work_performed]', with: "Edited content"
     end
 
     it 'cannot be edited by a non authorized user' do
