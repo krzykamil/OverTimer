@@ -38,6 +38,16 @@ RSpec.describe User, type: :model do
 
   end
 
+  describe 'employee-manager' do
+    let!(:employee_1) { create :user }
+    let!(:employee_2) { create :user }
+    let!(:admin) { create :admin_user }
+    it 'allows admin to be connected to many employees' do
+      Hand.create!(user_id: admin.id, hand_id: employee_1.id)
+      Hand.create!(user_id: admin.id, hand_id: employee_2.id)
+      expect(admin.hands.count).to eq(2)
+    end
+  end
 
   describe "custom name methods" do
     it 'has a full name method that joins first and last name' do
